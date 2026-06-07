@@ -35,6 +35,14 @@ public class Audio extends ElementoMultimediale implements Riproducibile{
         }
     }
 
+    public int getDurata(){
+        return durata;
+    }
+
+    public int getVolume(){
+        return volume;
+    }
+
 
 
 

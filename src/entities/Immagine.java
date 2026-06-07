@@ -15,6 +15,10 @@ public class Immagine extends ElementoMultimediale {
         for(int i=0; i<luminosita; i++){
             asterischi += "*";
         }
-        System.out.println(titolo+asterischi);
+        System.out.println(titolo+ " " + asterischi);
+    }
+
+    public int getLuminosita(){
+        return luminosita;
     }
 }

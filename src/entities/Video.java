@@ -53,6 +53,18 @@ public class Video extends ElementoMultimediale implements Riproducibile {
         }
     }
 
+    public int getLuminosita(){
+        return luminosita;
+    }
+
+    public int getVolume(){
+        return volume;
+    }
+
+    public int getDurata(){
+        return durata;
+    }
+
 
 
 
