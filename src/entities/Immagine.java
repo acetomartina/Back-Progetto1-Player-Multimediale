@@ -1,4 +1,20 @@
 package entities;
 
-public class Immagine {
+public class Immagine extends ElementoMultimediale {
+
+    private int luminosita;
+
+    public Immagine(String titolo, int luminosita) {
+        super(titolo);
+        this.luminosita=luminosita;
+    }
+
+
+    public void show(){
+        String asterischi = "";
+        for(int i=0; i<luminosita; i++){
+            asterischi += "*";
+        }
+        System.out.println(titolo+asterischi);
+    }
 }

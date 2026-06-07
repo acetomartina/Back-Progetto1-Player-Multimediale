@@ -3,7 +3,7 @@ import interfaces.Riproducibile;
 
 public class Audio extends ElementoMultimediale implements Riproducibile{
 
-    private double durata;
+    private int durata;
     private int volume;
 
     public Audio(String titolo, int durata,int volume) {
@@ -12,12 +12,30 @@ public class Audio extends ElementoMultimediale implements Riproducibile{
         this.volume=volume;
     }
 
-
     @Override
     public void play(){
+        String puntiEsclamativi="!";
+
+        for (int i=0; i<volume ; i++){
+            puntiEsclamativi += "!";
+        }
+
+        for (int i=0; i<durata; i++){
+            System.out.println(titolo + puntiEsclamativi);
+        }
+    }
+
+    public void alzaVolume() {
+        volume++;
+    }
+
+    public void abbassaVolume(){
+        if( volume > 0 ){
+            volume--;
+        }
     }
 
 
-    }
+
 
 }
