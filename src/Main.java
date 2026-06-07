@@ -45,163 +45,171 @@ public class Main {
             scelta = scanner.nextInt();
 
             switch (scelta) {
-                case 1 -> {
-                    System.out.println("Hai scelto Immagine!");
-                    System.out.println("Scegli un numero da 1 a 5 e ti mostrerò l'immagine corrispondente!");
-
-                    for (int i = 0; i < immagini.length; i++) {
-                        System.out.println((i + 1) + " - " + immagini[i].getTitolo());
-                    }
-
-                    int sceltaImmagine = scanner.nextInt();
-
-                    immagini[sceltaImmagine - 1].show();
-
-                    Immagine immagineScelta = immagini[sceltaImmagine - 1];
-
-                    System.out.println();
-                    System.out.println("Luminosità attuale: " + immagineScelta.getLuminosita());
-                    System.out.println();
-                    System.out.println("Vuoi modificare la luminosità?");
-                    System.out.println("1 - Aumenta la luminosità");
-                    System.out.println("2 - Diminuisci la luminosità");
-                    System.out.println("0 - No");
-
-                    int sceltaLuminosita = scanner.nextInt();
-
-                    switch (sceltaLuminosita) {
-                        case 1 -> {
-                            immagineScelta.alzaLuminosita();
-                            System.out.println();
-                            System.out.println("Luminosità aumentata: " + immagineScelta.getLuminosita());
-                            immagineScelta.show();
-                        }
-                        case 2 -> {
-                            immagineScelta.abbassaLuminosita();
-                            System.out.println();
-                            System.out.println("Luminosità diminuita: " + immagineScelta.getLuminosita());
-                            immagineScelta.show();
-                        }
-                        case 0 -> {
-                            System.out.println("Nessuna modifica effettuata.");
-                        }
-                        default -> {
-                            System.out.println("Scelta non valida.");
-                        }
-                    }
-                    System.out.println();
-                }
-                case 2 -> {
-                    System.out.println("Hai scelto Video!");
-                    System.out.println("Scegli un numero da 1 a 5 e ti mostrerò il video corrispondente!");
-
-                    for (int i = 0; i < videos.length; i++) {
-                        System.out.println((i + 1) + " - " + videos[i].getTitolo());
-                    }
-
-                    int sceltaVideo = scanner.nextInt();
-
-                    Video videoScelto = videos[sceltaVideo -1];
-
-                    videoScelto.play();
-
-                    System.out.println();
-                    System.out.println("Durata: " + videoScelto.getDurata());
-                    System.out.println("Volume attuale: " + videoScelto.getVolume());
-                    System.out.println("Luminosità attuale: " + videoScelto.getLuminosita());
-                    System.out.println();
-
-                    System.out.println("Vuoi modificare qualcosa?");
-                    System.out.println("1 - Aumenta volume");
-                    System.out.println("2 - Diminuisci volume");
-                    System.out.println("3 - Aumenta luminosità");
-                    System.out.println("4 - Diminuisci luminosità");
-                    System.out.println("0 - No");
-
-                    int sceltaModificaVideo = scanner.nextInt();
-
-                    switch (sceltaModificaVideo){
-                        case 1 -> {
-                            videoScelto.alzaVolume();
-                            System.out.println("Volume aumentato: " + videoScelto.getVolume());
-                            System.out.println();
-                            videoScelto.play();
-                        }
-                        case 2 -> {
-                            videoScelto.abbassaVolume();
-                            System.out.println("Volume diminuito: " + videoScelto.getVolume());
-                            System.out.println();
-                            videoScelto.play();
-                        }
-                        case 3 -> {
-                            videoScelto.alzaLuminosita();
-                            System.out.println("Luminosità aumentata: " + videoScelto.getLuminosita());
-                            System.out.println();
-                            videoScelto.play();
-                        }
-                        case 4 -> {
-                            videoScelto.abbassaLuminosita();
-                            System.out.println("Luminosità diminuita: " + videoScelto.getLuminosita());
-                            System.out.println();
-                            videoScelto.play();
-                        }
-                        case 0 -> System.out.println("Nessuna modifica effettuata.");
-                        default -> System.out.println("Scelta non valida.");
-                    }
-                    System.out.println();
-
-
-                }
-
-                case 3 -> {
-                    System.out.println("Hai scelto Audio!");
-                    System.out.println("Scegli un numero da 1 a 5 ed ascolterai l'audio corrispondente!");
-
-                    for (int i = 0; i < audios.length; i++) {
-                        System.out.println((i + 1) + " - " + audios[i].getTitolo());
-                    }
-
-                    int sceltaAudio = scanner.nextInt();
-
-                    Audio audioScelto = audios[sceltaAudio -1];
-
-                    audioScelto.play();
-
-                    System.out.println();
-                    System.out.println("Durata: " + audioScelto.getDurata());
-                    System.out.println("Volume attuale: " + audioScelto.getVolume());
-                    System.out.println();
-
-                    System.out.println("Vuoi modificare qualcosa?");
-                    System.out.println("1 - Aumenta volume");
-                    System.out.println("2 - Diminuisci volume");
-                    System.out.println("0 - No");
-
-                    int sceltaModificaAudio = scanner.nextInt();
-
-                    switch (sceltaModificaAudio){
-                        case 1 -> {
-                            audioScelto.alzaVolume();
-                            System.out.println("Volume aumentato: " + audioScelto.getVolume());
-                            System.out.println();
-                            audioScelto.play();
-                        }
-                        case 2 -> {
-                            audioScelto.abbassaVolume();
-                            System.out.println("Volume diminuito: " + audioScelto.getVolume());
-                            System.out.println();
-                            audioScelto.play();
-                        }
-                        case 0 -> System.out.println("Nessuna modifica effettuata");
-                        default -> System.out.println("Scelta non valida.");
-                    }
-
-                    System.out.println();
-                }
+                case 1 -> gestisciImmagine(scanner, immagini);
+                case 2 -> gestisciVideo(scanner, videos);
+                case 3 -> gestisciAudio(scanner, audios);
                 case 0 -> System.out.println("Chiusura player.");
                 default -> System.out.println("Scelta non valida.");
             }
         } while (scelta != 0);
 
+    }
+
+
+    public static void gestisciImmagine(Scanner scanner, Immagine[] immagini) {
+        System.out.println("Hai scelto Immagine!");
+        System.out.println("Scegli un numero da 1 a 5 e ti mostrerò l'immagine corrispondente!");
+
+        for (int i = 0; i < immagini.length; i++) {
+            System.out.println((i + 1) + " - " + immagini[i].getTitolo());
+        }
+
+        int sceltaImmagine = scanner.nextInt();
+
+        immagini[sceltaImmagine - 1].show();
+
+        Immagine immagineScelta = immagini[sceltaImmagine - 1];
+
+        System.out.println();
+        System.out.println("Luminosità attuale: " + immagineScelta.getLuminosita());
+        System.out.println();
+        System.out.println("Vuoi modificare la luminosità?");
+        System.out.println("1 - Aumenta la luminosità");
+        System.out.println("2 - Diminuisci la luminosità");
+        System.out.println("0 - No");
+
+        int sceltaLuminosita = scanner.nextInt();
+
+        switch (sceltaLuminosita) {
+            case 1 -> {
+                immagineScelta.alzaLuminosita();
+                System.out.println();
+                System.out.println("Luminosità aumentata: " + immagineScelta.getLuminosita());
+                immagineScelta.show();
+            }
+            case 2 -> {
+                immagineScelta.abbassaLuminosita();
+                System.out.println();
+                System.out.println("Luminosità diminuita: " + immagineScelta.getLuminosita());
+                immagineScelta.show();
+            }
+            case 0 -> {
+                System.out.println("Nessuna modifica effettuata.");
+            }
+            default -> {
+                System.out.println("Scelta non valida.");
+            }
+        }
+        System.out.println();
+    }
+
+
+    public static void gestisciVideo(Scanner scanner, Video[] videos) {
+        System.out.println("Hai scelto Video!");
+        System.out.println("Scegli un numero da 1 a 5 e ti mostrerò il video corrispondente!");
+
+        for (int i = 0; i < videos.length; i++) {
+            System.out.println((i + 1) + " - " + videos[i].getTitolo());
+        }
+
+        int sceltaVideo = scanner.nextInt();
+
+        Video videoScelto = videos[sceltaVideo - 1];
+
+        videoScelto.play();
+
+        System.out.println();
+        System.out.println("Durata: " + videoScelto.getDurata());
+        System.out.println("Volume attuale: " + videoScelto.getVolume());
+        System.out.println("Luminosità attuale: " + videoScelto.getLuminosita());
+        System.out.println();
+
+        System.out.println("Vuoi modificare qualcosa?");
+        System.out.println("1 - Aumenta volume");
+        System.out.println("2 - Diminuisci volume");
+        System.out.println("3 - Aumenta luminosità");
+        System.out.println("4 - Diminuisci luminosità");
+        System.out.println("0 - No");
+
+        int sceltaModificaVideo = scanner.nextInt();
+
+        switch (sceltaModificaVideo) {
+            case 1 -> {
+                videoScelto.alzaVolume();
+                System.out.println("Volume aumentato: " + videoScelto.getVolume());
+                System.out.println();
+                videoScelto.play();
+            }
+            case 2 -> {
+                videoScelto.abbassaVolume();
+                System.out.println("Volume diminuito: " + videoScelto.getVolume());
+                System.out.println();
+                videoScelto.play();
+            }
+            case 3 -> {
+                videoScelto.alzaLuminosita();
+                System.out.println("Luminosità aumentata: " + videoScelto.getLuminosita());
+                System.out.println();
+                videoScelto.play();
+            }
+            case 4 -> {
+                videoScelto.abbassaLuminosita();
+                System.out.println("Luminosità diminuita: " + videoScelto.getLuminosita());
+                System.out.println();
+                videoScelto.play();
+            }
+            case 0 -> System.out.println("Nessuna modifica effettuata.");
+            default -> System.out.println("Scelta non valida.");
+        }
+        System.out.println();
+
+
+    }
+
+
+    public static void gestisciAudio(Scanner scanner, Audio[] audios) {
+        System.out.println("Hai scelto Audio!");
+        System.out.println("Scegli un numero da 1 a 5 ed ascolterai l'audio corrispondente!");
+
+        for (int i = 0; i < audios.length; i++) {
+            System.out.println((i + 1) + " - " + audios[i].getTitolo());
+        }
+
+        int sceltaAudio = scanner.nextInt();
+
+        Audio audioScelto = audios[sceltaAudio - 1];
+
+        audioScelto.play();
+
+        System.out.println();
+        System.out.println("Durata: " + audioScelto.getDurata());
+        System.out.println("Volume attuale: " + audioScelto.getVolume());
+        System.out.println();
+
+        System.out.println("Vuoi modificare qualcosa?");
+        System.out.println("1 - Aumenta volume");
+        System.out.println("2 - Diminuisci volume");
+        System.out.println("0 - No");
+
+        int sceltaModificaAudio = scanner.nextInt();
+
+        switch (sceltaModificaAudio) {
+            case 1 -> {
+                audioScelto.alzaVolume();
+                System.out.println("Volume aumentato: " + audioScelto.getVolume());
+                System.out.println();
+                audioScelto.play();
+            }
+            case 2 -> {
+                audioScelto.abbassaVolume();
+                System.out.println("Volume diminuito: " + audioScelto.getVolume());
+                System.out.println();
+                audioScelto.play();
+            }
+            case 0 -> System.out.println("Nessuna modifica effettuata");
+            default -> System.out.println("Scelta non valida.");
+        }
+
+        System.out.println();
     }
 }
