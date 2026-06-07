@@ -24,7 +24,7 @@ public class Audio extends ElementoMultimediale implements Riproducibile, Regola
 
     @Override
     public void play(){
-        String puntiEsclamativi="!";
+        String puntiEsclamativi="";
 
         for (int i=0; i<volume ; i++){
             puntiEsclamativi += "!";
