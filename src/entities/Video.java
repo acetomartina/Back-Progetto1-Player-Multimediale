@@ -29,7 +29,7 @@ public class Video extends ElementoMultimediale implements Riproducibile {
         }
 
         for (int i = 0; i < durata; i++) {
-            System.out.println(titolo + puntiEsclamativi + asterischi);
+            System.out.println(titolo + " " + puntiEsclamativi + " " + asterischi);
         }
     }
 

@@ -21,4 +21,14 @@ public class Immagine extends ElementoMultimediale {
     public int getLuminosita(){
         return luminosita;
     }
+
+    public void alzaLuminosita(){
+        luminosita++;
+    }
+
+    public void abbassaLuminosita(){
+        if(luminosita > 0){
+            luminosita--;
+        }
+    }
 }
