@@ -1,12 +1,18 @@
 package entities;
 
-public class Immagine extends ElementoMultimediale {
+import interfaces.RegolaLuminosita;
+
+public class Immagine extends ElementoMultimediale implements RegolaLuminosita {
 
     private int luminosita;
 
     public Immagine(String titolo, int luminosita) {
         super(titolo);
         this.luminosita=luminosita;
+    }
+
+    public int getLuminosita(){
+        return luminosita;
     }
 
 
@@ -18,14 +24,14 @@ public class Immagine extends ElementoMultimediale {
         System.out.println(titolo+ " " + asterischi);
     }
 
-    public int getLuminosita(){
-        return luminosita;
-    }
 
+
+    @Override
     public void alzaLuminosita(){
         luminosita++;
     }
 
+    @Override
     public void abbassaLuminosita(){
         if(luminosita > 0){
             luminosita--;

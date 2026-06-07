@@ -1,7 +1,8 @@
 package entities;
+import interfaces.RegolaVolume;
 import interfaces.Riproducibile;
 
-public class Audio extends ElementoMultimediale implements Riproducibile{
+public class Audio extends ElementoMultimediale implements Riproducibile, RegolaVolume {
 
     private int durata;
     private int volume;
@@ -11,6 +12,15 @@ public class Audio extends ElementoMultimediale implements Riproducibile{
         this.durata=durata;
         this.volume=volume;
     }
+
+    public int getDurata(){
+        return durata;
+    }
+
+    public int getVolume(){
+        return volume;
+    }
+
 
     @Override
     public void play(){
@@ -25,23 +35,18 @@ public class Audio extends ElementoMultimediale implements Riproducibile{
         }
     }
 
+    @Override
     public void alzaVolume() {
         volume++;
     }
 
+    @Override
     public void abbassaVolume(){
         if( volume > 0 ){
             volume--;
         }
     }
 
-    public int getDurata(){
-        return durata;
-    }
-
-    public int getVolume(){
-        return volume;
-    }
 
 
 
